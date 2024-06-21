@@ -1,0 +1,96 @@
+.sig-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 80px;
+  width: 400px;
+  background: #EAEAEA;
+  padding-bottom: 30px;
+  border-radius: 25px;
+  height: 420px;
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sig-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the content horizontally */
+  justify-content: center; /* This centers the content vertically if there's extra space */
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+
+.text {
+  color: #000;
+  font-size: 38px;
+  font-weight: 700;
+  font-family: 'Baloo 2', sans-serif;
+  margin-top: 10px;
+}
+
+.inputs {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 300px;
+  height: 45px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+.input img {
+  margin: 0 20px; /* Adjust margin as needed */
+  width: 20px; /* Example size, adjust as needed */
+  height: 20px; /* Example size, adjust as needed */
+}
+
+.input input {
+  height: 50px;
+  width: 200px;
+  background: transparent; 
+  border: 1px solid #ccc; 
+  box-shadow: none; 
+  outline: none; 
+  color: #000; 
+  font-size: 15px;
+  padding: 0 10px; 
+}
+
+
+.signup-container {
+  display: flex;
+  gap: 30px;
+  margin: 6px auto;
+  margin-top: 30px;
+}
+
+.submit, .submit.orange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 40px;
+  color: black;
+  background: white;
+  border-radius: 15px;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submit.orange {
+  background: #FF5E36;
+  color: #fff;
+  border: 2px solid transparent;
+}
+

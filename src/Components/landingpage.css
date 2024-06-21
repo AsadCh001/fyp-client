@@ -1,0 +1,107 @@
+.bg-dark {
+  background-color: #2E2E2C;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.logo-image {
+  height: 2rem;
+  width: 2rem;
+}
+
+.logo-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.hatlab-image {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  width: 28rem;
+  height: auto;
+}
+
+.main-content {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  justify-content: center;
+  background-color: #FF5E36;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  padding: 2rem;
+  width: 45%;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.description {
+  color: white;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  width: auto;
+}
+
+.button:hover {
+  background-color: #433f3f;
+}
