@@ -1,0 +1,10 @@
+{
+    "rewrites": [
+      { "source": "/signup", "destination": "/" },
+      { "source": "/login", "destination": "/" },
+      { "source": "/chatbox", "destination": "/" },
+      { "source": "/chatbox/:chat_id", "destination": "/" },
+      { "source": "/(.*)", "destination": "/" }
+    ]
+  }
+  
