@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
-import './login.css';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
