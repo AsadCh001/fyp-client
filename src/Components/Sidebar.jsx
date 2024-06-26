@@ -12,7 +12,6 @@ const Sidebar = () => {
     const token = getCookie('access_token');
     if (token) {
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
       setUserName(decodedToken.sub.name);
       setUserEmail(decodedToken.sub.email);
     }

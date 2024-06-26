@@ -32,15 +32,16 @@ const Chatbox = () => {
 
   const fetchChatList = async () => {
     try {
-      const response = await fetchWithAuth('http://127.0.0.1:5000/api/chats', {
+      const response = await fetchWithAuth("http://127.0.0.1:5000/api/chats", {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       });
-
+      console.log('response:', response);
       if (response.ok) {
         const data = await response.json();
+        console.log('chat list:', data);
         setChats(data.chats);
       } else {
         console.error('Error:', response.status, response.statusText);
@@ -129,7 +130,7 @@ const Chatbox = () => {
       let newChatId = chatId;
       if (!chatId) {
         // If no chatId, start a new chat
-        const startChatResponse = await fetchWithAuth('http://127.0.0.1:5000/api/startchat', {
+        const startChatResponse = await fetchWithAuth("http://127.0.0.1:5000/api/startchat", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -149,7 +150,7 @@ const Chatbox = () => {
         }
       }
   
-      const response = await fetchWithAuth('http://127.0.0.1:5000/api/getfeatures', {
+      const response = await fetchWithAuth("http://127.0.0.1:5000/api/getfeatures", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -330,7 +331,7 @@ const Chatbox = () => {
 
     if (response.status === 401) {
       const refreshToken = getCookie('refresh_token');
-      const refreshResponse = await fetch('http://127.0.0.1:5000/api/refresh', {
+      const refreshResponse = await fetch("http://127.0.0.1:5000/api/refresh", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -349,7 +350,6 @@ const Chatbox = () => {
         navigate('/login');
       }
     }
-
     return response;
   };
 

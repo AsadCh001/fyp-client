@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,37 +27,25 @@ const Signup = () => {
 
   const validatePassword = () => {
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-
     setPasswordError(passwordPattern.test(password) ? '' : 'Password must be at least 8 characters long and contain at least one symbol.');
   };
 
   const validateConfirmPassword = () => {
-   
-    if(confirmPassword !== password)
-    {setCPasswordError('Password does not match');}
+    setCPasswordError(confirmPassword !== password ? 'Password does not match' : '');
   };
 
-
   const handleSubmit = async () => {
-    // Validate inputs
     validateName();
     validateEmail();
     validatePassword();
+    validateConfirmPassword();
 
-    // If any validation errors, return
-    if (nameError || emailError || passwordError) return;
+    if (nameError || emailError || passwordError || CpasswordError) return;
 
     try {
-      // Send POST request to backend server
-      const response = await axios.post('http://127.0.0.1:5000/api/signup', {
-        name,
-        email,
-        password
-      });
+      const response = await axios.post("http://127.0.0.1:5000/api/signup", { name, email, password });
 
-      // Check if response status is 200
       if (response.status === 200) {
-        // Show toaster notification
         toast.success(response.data.message, {
           position: "top-right",
           autoClose: 5000,
@@ -71,12 +59,9 @@ const Signup = () => {
         setTimeout(() => {
           navigate('/login');
         }, 2000);
-        
       } 
-
-    } 
-    catch (error) {
-      toast.error(error.response.data.message || 'An error occurred.', {
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'An error occurred.', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -88,38 +73,50 @@ const Signup = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+  
   return (
     <div className='sig-container1' style={{ backgroundColor: '#fff' }}>
+      <div className="logo1-container">
+        <button onClick={handleLogoClick} className="logo1-button">
+          <img className="logo1-image" src="/logo.png" alt="logo" />
+          <div className="logo1-text">HATLAB</div>
+        </button>
+      </div>
+      
       <div className="sig-container">
         <div className="sig-header">
           <div className="text">Sign Up</div>
         </div>
         <div className="inputs">
           <div className="input">
-            <img style={{ marginRight: "10px" }} src="/name.png" alt="Hatlab" className="input"/>
+            <img src="/name.png" alt="Name Icon" />
             <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} onBlur={validateName} />
-            <div className="error">{nameError}</div>
           </div>
+          {nameError && <div className="error">{nameError}</div>}
           <div className="input">
-            <img style={{ marginRight: "20px" }} src="/email.png" alt="Hatlab" className="input" />
+            <img src="/email.png" alt="Email Icon" />
             <input type="email" placeholder="Email Id" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
-            <div className="error">{emailError}</div>
           </div>
+          {emailError && <div className="error">{emailError}</div>}
           <div className="input">
-            <img style={{ marginRight: "20px" }}src="/pass.png" alt="Hatlab" className="input" />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} onBlur={validatePassword} />
-            <div className="error">{passwordError}</div>
+            <img src="/pass.png" alt="Password Icon" />
+            <input type="password" placeholder="Password (At least 8 Characters & 1 Symbol)" value={password} onChange={(e) => setPassword(e.target.value)} onBlur={validatePassword} />
           </div>
+          {passwordError && <div className="error">{passwordError}</div>}
           <div className="input">
-            <img style={{ marginRight: "20px" }}src="/pass.png" alt="Hatlab" className="input" />
+            <img src="/pass.png" alt="Confirm Password Icon" />
             <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} onBlur={validateConfirmPassword} />
-            <div className="error">{CpasswordError}</div>
           </div>
+          {CpasswordError && <div className="error">{CpasswordError}</div>}
         </div>
-
-        
         <div className="signup-container">
           <button className="submit orange" onClick={handleSubmit}>Sign Up</button>
+        </div>
+        <div className="login-link-container">
+          <p>Already have an account? <Link to="/login" className="login-link">Login here</Link></p>
         </div>
       </div>
       <ToastContainer />

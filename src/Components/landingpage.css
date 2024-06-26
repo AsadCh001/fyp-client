@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .bg-dark {
   background-color: #2E2E2C;
   min-height: 100vh;
@@ -34,14 +36,14 @@
   color: white;
   font-size: 2rem;
   font-weight: bold;
-  margin-left: 0.5rem;
+  margin-left: 0rem;
 }
 
 .hatlab-image {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 10%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   width: 28rem;
   height: auto;
 }
@@ -50,44 +52,88 @@
   display: flex;
   height: 100vh;
   align-items: center;
+  width: 100%;
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-left: auto;
   justify-content: center;
   background-color: #FF5E36;
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
   padding: 2rem;
-  width: 45%;
+  width: 50%;
   height: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .title {
   color: black;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
+  margin-left: 4%;
   margin-top: 1rem;
-  text-align: center;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  width: 90%; /* Set a specific width to control text wrapping */
 }
 
-.description {
+.description-part1, .description-part2 {
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-left: 2%;
   margin-top: 1rem;
-  text-align: center;
+  text-align: left;
   padding: 0 1rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap; /* Ensure no wrapping initially */
+  overflow: hidden;
+  width: 90%; /* Set a specific width to match the title width */
+  display: inline-block;
+  line-height: 1.5; 
+}
+
+.description-part1 {
+  animation: typing1 2s steps(65) 1s 1 normal both, blink-caret1 .75s step-end infinite;
+
+}
+
+.description-part2 {
+  animation: typing2 2s steps(60) 2.5s 1 normal both, blink-caret2 .75s step-end infinite;
+  margin-top: 0.1rem;
+
+}
+
+@keyframes typing1 {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret1 {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+@keyframes typing2 {
+  0% { width: 0; visibility: hidden; }
+  100% { width: 100%; }
+}
+
+@keyframes blink-caret2 {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
   gap: 1rem;
+  margin-left: 35%; /* Align buttons with title and description */
 }
 
 .button {
@@ -100,6 +146,7 @@
   cursor: pointer;
   text-align: center;
   width: auto;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .button:hover {

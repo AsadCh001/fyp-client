@@ -1,3 +1,33 @@
+
+/* New styles for the logo */
+.logo1-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo1-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.logo1-image {
+  height: 2rem;
+  width: 3rem;
+}
+
+.logo1-text {
+  color: black; /* Change to match the desired color for the login page */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}/* Existing styles */
 .sig-container {
   display: flex;
   flex-direction: column;
@@ -5,9 +35,8 @@
   margin-top: 80px;
   width: 400px;
   background: #EAEAEA;
-  padding-bottom: 30px;
+  padding: 20px; /* Adjust padding as needed */
   border-radius: 25px;
-  height: 420px;
   box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -18,9 +47,8 @@
   justify-content: center; /* This centers the content vertically if there's extra space */
   gap: 9px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
 }
-
 
 .text {
   color: #000;
@@ -31,46 +59,51 @@
 }
 
 .inputs {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 }
 
 .input {
   display: flex;
   align-items: center;
   margin: auto;
-  width: 300px;
+  width: 100%;
   height: 45px;
   background: #fff;
   border-radius: 15px;
+  padding: 0 10px;
 }
 
 .input img {
-  margin: 0 20px; /* Adjust margin as needed */
+  margin-right: 10px; /* Adjust margin as needed */
   width: 20px; /* Example size, adjust as needed */
   height: 20px; /* Example size, adjust as needed */
 }
 
 .input input {
-  height: 50px;
-  width: 200px;
-  background: transparent; 
-  border: 1px solid #ccc; 
-  box-shadow: none; 
-  outline: none; 
-  color: #000; 
+  height: 45px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
   font-size: 15px;
-  padding: 0 10px; 
+  padding-left: 10px;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px; /* Adjust margin as needed */
+  text-align: left;
+}
 
 .signup-container {
   display: flex;
-  gap: 30px;
-  margin: 6px auto;
-  margin-top: 30px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .submit, .submit.orange {
@@ -94,3 +127,18 @@
   border: 2px solid transparent;
 }
 
+.login-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.login-link {
+  color: #FF5E36;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
