@@ -19,12 +19,6 @@ const Login = () => {
     }
   }, [isAuthenticated, navigate]);
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSubmit();
-    }
-  };
-
   const handleSubmit = async () => {
     if (!email || !password) {
       setError('Email and password are required.');
@@ -87,6 +81,12 @@ const Login = () => {
     navigate('/');
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
   return (
     <div className="bg-white flex flex-col justify-center items-center min-h-screen">
       <div className="logo1-container">
@@ -98,35 +98,36 @@ const Login = () => {
       <div
         className="bg-[#EAEAEA] p-6 rounded-lg shadow-lg w-full max-w-md md:max-w-lg"
         style={{ borderRadius: '40px', boxShadow: '1px 1px 4px 4px rgba(0, 0, 0, 0.3)' }}
+        onKeyDown={handleKeyDown}
       >
-        <h1 className="text-4xl font-bold text-center mb-8">Login</h1>
+        <h1 className="text-4xl font-bold text-center mb-8 text-black">Login</h1>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-black">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+              className="mt-1 block w-full px-3 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Password</label>
+            <label className="block text-sm font-medium text-black">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-white-100 rounded-md shadow-sm focus:outline-none"
+              className="mt-1 block w-full px-3 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none"
             />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
         <div className="mt-6 flex justify-center items-center">
-          <button onKeyPress={handleKeyPress} onClick={handleSubmit} className="bg-[#FF5E36] font-bold text-white py-2 px-6 rounded-md">
+          <button onClick={handleSubmit} className="bg-[#FF5E36] font-bold text-white py-2 px-6 rounded-md hover:bg-[#ff8671]">
             Login
           </button>
         </div>
-        <div className="signup-link-container mt-4 text-center">
+        <div className="signup-link-container mt-4 text-center text-black">
           <p>New here? <Link to="/signup" className="signup-link">Register Yourself</Link></p>
         </div>
       </div>

@@ -4,8 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import './sidebar.css';
 
 const Sidebar = () => {
-  const [userName, setUserName] = useState('HATLAB');
-  const [userEmail, setUserEmail] = useState('Hatlab@gmail.com');
+  const [userName, setUserName] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,7 +12,6 @@ const Sidebar = () => {
     if (token) {
       const decodedToken = jwtDecode(token);
       setUserName(decodedToken.sub.name);
-      setUserEmail(decodedToken.sub.email);
     }
   }, []);
 
@@ -79,7 +77,6 @@ const Sidebar = () => {
             <img src="/name.png" alt="Hatlab" className="profile-image" />
             <div className="profile-text">
               <h2>{userName}</h2>
-              <p>{userEmail}</p>
             </div>
           </div>
           <button className="signout-btn" onClick={handleSignOut}>Sign Out</button>

@@ -1,6 +1,13 @@
 
-/* New styles for the logo */
-.logo1-container {
+
+.log-text {
+  color: black; /* Change to match the desired color for the login page */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.log-cont {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -8,7 +15,7 @@
   align-items: center;
 }
 
-.logo1-button {
+.log-button {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -17,23 +24,18 @@
   padding: 0;
 }
 
-.logo1-image {
+.log-image {
   height: 2rem;
   width: 3rem;
 }
 
-.logo1-text {
-  color: black; /* Change to match the desired color for the login page */
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 0.5rem;
-}/* Existing styles */
+
 .sig-container {
   display: flex;
   flex-direction: column;
   margin: auto;
   margin-top: 80px;
-  width: 400px;
+  width: 450px;
   background: #EAEAEA;
   padding: 20px; /* Adjust padding as needed */
   border-radius: 25px;
@@ -58,7 +60,7 @@
   margin-top: 10px;
 }
 
-.inputs {
+.input-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -78,7 +80,7 @@
 
 .input img {
   margin-right: 10px; /* Adjust margin as needed */
-  width: 20px; /* Example size, adjust as needed */
+  width: 25px; /* Example size, adjust as needed */
   height: 20px; /* Example size, adjust as needed */
 }
 
@@ -123,6 +125,12 @@
 
 .submit.orange {
   background: #FF5E36;
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.submit.orange:hover {
+  background: #f99379;
   color: #fff;
   border: 2px solid transparent;
 }

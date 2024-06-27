@@ -78,11 +78,11 @@ const Signup = () => {
   };
   
   return (
-    <div className='sig-container1' style={{ backgroundColor: '#fff' }}>
-      <div className="logo1-container">
-        <button onClick={handleLogoClick} className="logo1-button">
-          <img className="logo1-image" src="/logo.png" alt="logo" />
-          <div className="logo1-text">HATLAB</div>
+    <>
+      <div className="log-cont">
+        <button onClick={handleLogoClick} className="log-button">
+          <img className="log-image" src="/logo.png" alt="logo" />
+          <div className="log-text">HATLAB</div>
         </button>
       </div>
       
@@ -90,15 +90,15 @@ const Signup = () => {
         <div className="sig-header">
           <div className="text">Sign Up</div>
         </div>
-        <div className="inputs">
+        <div className="input-container">
           <div className="input">
             <img src="/name.png" alt="Name Icon" />
-            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} onBlur={validateName} />
+            <input type="text" placeholder="Enter Full Name" value={name} onChange={(e) => setName(e.target.value)} onBlur={validateName} />
           </div>
           {nameError && <div className="error">{nameError}</div>}
           <div className="input">
             <img src="/email.png" alt="Email Icon" />
-            <input type="email" placeholder="Email Id" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
+            <input type="email" placeholder=" Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
           </div>
           {emailError && <div className="error">{emailError}</div>}
           <div className="input">
@@ -120,7 +120,8 @@ const Signup = () => {
         </div>
       </div>
       <ToastContainer />
-    </div>
+
+    </>
   );
 };
 

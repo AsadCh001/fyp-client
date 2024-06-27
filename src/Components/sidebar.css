@@ -1,7 +1,7 @@
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background: #2f2f2f;
+  background: #1e1e1e;
   color: white;
   display: flex;
   flex-direction: column;
@@ -107,7 +107,18 @@
 .signout-btn {
   background-color: #555555;
   color: white;
-  width: 100%;
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.signout-btn:hover {
+  background-color: #736d6d;
+  color: white;
+  width: 90%;
   padding: 10px;
   border: none;
   border-radius: 5px;
